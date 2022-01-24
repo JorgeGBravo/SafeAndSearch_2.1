@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS destiniaDB;
+CREATE DATABASE IF NOT EXISTS nombreDB;
 
 CREATE table if not exists meaningQuery(
     id int not null auto_increment PRIMARY KEY,
