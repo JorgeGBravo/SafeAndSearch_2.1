@@ -1,0 +1,15 @@
+{
+  "type": "project",
+  "description": "This application is used to locate information or insert it into a database",
+  "authors": [
+    {
+      "name": "Jorge González Bravo",
+      "email": "jdgbravo@gmail.com"
+    }
+  ],
+  "require": {
+    "monolog/monolog": "2.0.*",
+    "ext-mysqli": "*",
+    "ext-mbstring": "*"
+  }
+}
