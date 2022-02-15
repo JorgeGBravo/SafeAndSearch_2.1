@@ -1,16 +1,29 @@
-CREATE DATABASE IF NOT EXISTS nombreDB;
+CREATE DATABASE IF NOT EXISTS SearchDB;
 
-CREATE table if not exists meaningQuery(
-    id int not null auto_increment PRIMARY KEY,
-    query VARCHAR(60) NOT NULL,
-    typeLang varchar(60) NOT NULL,
-    meaning varchar(256) NOT NULL
+
+CREATE TABLE IF NOT EXISTS users(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    userName VARCHAR(32) NOT NULL UNIQUE,
+    password VARCHAR(256) NOT NULL,
+    isAdmin BOOLEAN NOT NULL DEFAULT(0)
+);
+
+CREATE TABLE IF NOT EXISTS logged(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    idUser BIGINT NOT NULL,
+    timeLogged TIMESTAMP,
+    nameComputer VARCHAR(64)
 );
 
 
-INSERT INTO meaningQuery (query, typeLang, meaning) VALUES
-('hola','UTF-8','saludo'),
-('adios','UTF-8','despedida'),
-('coche','UTF-8','vehiculo de cuatro ruedas'),
-('avion','UTF-8','vehiculo volador'),
-('moto','UTF-8','vehiculo de dos ruedas');
+CREATE TABLE IF NOT EXISTS meaningQuery(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    query VARCHAR(60) NOT NULL,
+    typeLang VARCHAR(60) NOT NULL,
+    meaning VARCHAR(256) NOT NULL,
+    lastUserWhoModifiedTheField BIGINT NOT NULL
+);
+
+
+INSERT INTO users (userName, password, isAdmin) VALUES
+('root','GyM8XFcqbkxs6qzd892RCA==',1)

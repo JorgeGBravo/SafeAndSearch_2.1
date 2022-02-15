@@ -1,1 +1,3 @@
 <?php
+
+global $idUserAuth;

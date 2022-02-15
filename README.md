@@ -4,8 +4,8 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-# App SafeAndSearch 
-¡Bienvenido a esta tu APP de Guarda y Busqueda de tus datos!
+# App SafeAndSearch 2.1
+¡Bienvenido a esta tu APP de Guarda y Búsqueda de tus datos!
 
 Search es una APP desarrollada en [PHP](https://www.php.net/), de como una simple aplicación de busqueda puede ayudar día a día.
 
@@ -23,6 +23,7 @@ Toda la información insertada en la BD estará cifrada.
 
 Con una pequeña configuración podrás acceder desde cualquier lugar a tus datos.
 
+Este versión cuenta con gestión de usuario, control de usuario registrado.
 ## Instalación
 
 Tan simple como copiarlo donde tú quieras y seguir los siguientes pasos:
@@ -37,6 +38,7 @@ Tan simple como copiarlo donde tú quieras y seguir los siguientes pasos:
  DB_PASSWORD = '12345';
  PASS_ENCRYPT = 'PASSWORD';
  CYPHER_ALGO = 'AES-128-ECB';
+ NANE_TERMINAL = 'NombreTerminalAcceso';  -no podrá haber dos terminales iguales-
 ```
 - La máquina a trabajar debería tener instalado [Composer](https://getcomposer.org/). Si es así actualiza las dependencias con ```` $ composer update ````.
 
@@ -57,7 +59,14 @@ Debemos de tener en cuenta varias cuestiones.
 
 ## Funcionamiento
 En este punto describiremos de forma sencilla las simples funciones que se han desarrollado para su uso.
-
+### Creación de usuario
+    / php Search.php [newUser] [user] [password]
+Se introducirán los registros de nuevos usuarios de forma simple.
+Siempre contamos con un usuario root para la creación de nuevos, solo usuarios administradores están
+autorizados para realizar esta tarea, para ello deberán incluir en la sentencia la parlabra ```admin``` al final de la sentencia.
+### Login
+    /php Search.php [Login] [user] [password]
+De esta forma nos autentificaremos en el servicio.
 ### Busqueda
     /php Search.php introduce [word]
 Solo el comando y una palabra y te devolverá el o los resultados del mismo.
