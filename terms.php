@@ -79,7 +79,6 @@ function searchAndIntroduceQuery($argv)
             (new Login)->login($username, $password);
             exit;
 
-
         default:
             $search = new Search();
             $result = $search->getSearch($key);
@@ -90,12 +89,12 @@ function searchAndIntroduceQuery($argv)
             if (count($result) > 1) {
                 foreach ($result as $value) {
                     $valueDecrypt = (new Encryption)->decrypt($value['meaning']);
-                    echo "{$result[0]['query']} : {$valueDecrypt}       ->from: {$result[0]['userName']}\n";
+                    echo "{$result[0]['query']} : {$valueDecrypt}       ->from: {$result[0]['userName']}  {$result[0]['createdAt']}\n";
                 }
                 exit;
             }
             $valueDecrypt = (new Encryption)->decrypt($result[0]['meaning']);
-            echo "{$result[0]['query']} : {$valueDecrypt}       ->from: {$result[0]['userName']}";
+            echo "{$result[0]['query']} : {$valueDecrypt}       ->from: {$result[0]['userName']}  {$result[0]['createdAt']}";
             exit;
     }
 

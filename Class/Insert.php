@@ -14,7 +14,8 @@ class Insert extends Database
 
     protected function queryInsert($key, $language, $values, $idUser)
     {
-        return 'INSERT INTO meaningQuery (query, typeLang, meaning, lastUserWhoModifiedTheField) VALUES ("' . $key . '","' . $language . '","' . $values . '","' . $idUser . '")';
+        $createdAt = date('Y-m-d H:i:s');
+        return 'INSERT INTO meaningQuery (query, typeLang, meaning, lastUserWhoModifiedTheField, createdAt ) VALUES ("' . $key . '","' . $language . '","' . $values . '","' . $idUser . '""' . $createdAt . '")';
     }
 
 

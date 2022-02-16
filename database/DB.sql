@@ -21,7 +21,8 @@ CREATE TABLE IF NOT EXISTS meaningQuery(
     query VARCHAR(60) NOT NULL,
     typeLang VARCHAR(60) NOT NULL,
     meaning VARCHAR(256) NOT NULL,
-    lastUserWhoModifiedTheField BIGINT NOT NULL
+    lastUserWhoModifiedTheField BIGINT NOT NULL,
+    createdAt TIMESTAMP
 );
 
 
