@@ -59,7 +59,7 @@ class Login extends DataBase
             exit;
         }
         $difference = dateDifference($timeNow, $result[0]['timeLogged']);
-        if ($difference >= 5) {
+        if ($difference >= TIME_LOGIN_ON) {
             deleteVariable();
             echo "You are not logged in.";
             exit;
